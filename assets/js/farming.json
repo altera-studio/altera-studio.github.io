@@ -1,0 +1,47 @@
+{
+  "perfect-cs" : {
+    "5:00": 44,
+    "10:00": 107,
+    "15:00": 171,
+    "20:00": 236,
+    "25:00": 301,
+    "30:00": 370,
+    "35:00": 440,
+    "40:00": 510,
+    "45:00": 580,
+    "50:00": 650
+  },
+  "average-cs" : 
+  {
+    "solo top": 
+    {
+      "bronze" : 4.7,
+      "silver":  5.12,
+      "gold": 5.46,
+      "platinum": 5.69,
+      "diamond": 5.86,
+      "master": 5.99,
+      "challenger": 6.05
+    },
+    "solo mid": 
+    {
+      "bronze" : 4.22,
+      "silver":  4.61,
+      "gold": 4.96,
+      "platinum": 5.22,
+      "diamond": 5.45,
+      "master": 5.73,
+      "challenger": 5.88
+    },
+    "ADC": 
+    {
+      "bronze" : 5.11,
+      "silver":  5.55,
+      "gold": 5.88,
+      "platinum": 6.09,
+      "diamond": 6.27,
+      "master": 6.43,
+      "challenger": 6.49
+    }
+  }
+}
