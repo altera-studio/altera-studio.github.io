@@ -135,7 +135,7 @@
               </div>
               <div class="about--banner">
                 <video id="video" width="640" height="360" preload loop controls muted><!-- autoplay-->
-                  <source src="../small-video.mp4" type="video/mp4">
+                  <source src="assets/videos/small-video.mp4" type="video/mp4">
                 </video>
               </div>
               <div class="about--options">
@@ -265,10 +265,10 @@
                   </span>
                 </div>
                 <div class="work-request--information">
-                  <!--<div class="information-name">
+                  <div class="information-name">
                     <input id="name" type="text" spellcheck="false">
                     <label for="name">Name</label>
-                  </div>-->
+                  </div>
                   <div class="information-email">
                     <input id="email" type="email" spellcheck="false">
                     <label for="email">Email</label>
@@ -381,7 +381,7 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
     console.log(third);
   }); 
 
-  var videoBuild = ['http://ddragon.leagueoflegends.com/cdn/10.4.1/img/item/1027.png'];
+  var videoBuild = ['https://ddragon.leagueoflegends.com/cdn/10.4.1/img/item/1027.png'];
 
   getBuildForChampion('ryze', function(recommended) {
     for(var i in recommended)
