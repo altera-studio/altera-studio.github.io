@@ -1669,7 +1669,7 @@ body {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	width: 100%;
+	width: 63%;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
@@ -1742,7 +1742,7 @@ body {
 .work-request--information .information-name,
 .work-request--information .information-email {
 	position: relative;
-	width: 45%;
+	width: 100%; /* width: 45%; */
 	height: 50px;
 	font-size: 30px;
 	font-weight: 300
