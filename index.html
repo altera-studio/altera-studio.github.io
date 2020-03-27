@@ -214,25 +214,8 @@
               </div>
             </div>
           </li>
-         <!-- <li class="l-section section">
-            <div class="contact">
-              <div class="contact--lockup">
-                <div class="modal">
-                  <div class="modal--information">
-                    <p>A computer vision company based in <br>the heart of New York City</p>
-                    <a href="mailto:contact@altera.studio">contact@altera.studio</a>
-                    <a href="tel:+148126287560">+48 12 628 75 60</a>
-                  </div>
-                  <ul class="modal--options">
-                    <li><a href="#0">Bēhance</a></li>
-                    <li><a href="#0">dribbble</a></li>
-                    <li><a href="mailto:ouremail@gmail.com">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li> -->
           <li class="l-section section">
+            <div class="over-capacity" style="display:none;">Sorry! Due to high demand, our waitlist is closed. We're working to have it up again today.</div>
             <div class="hire">
               <h2>Pick a prize</h2>
               <h4>Choose a box below and submit<br>to BOOST up the queue by x1, x2, or x5</h4>
@@ -333,7 +316,7 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-auth.js"></script>
-<!--<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -349,10 +332,20 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  // firebase.analytics();
+  firebase.analytics();
 </script>
 <script src="assets/js/firebase/anonymous-auth.js"></script>
 <script>
+  firebase.database().ref().child('waitlist').on('value', function(snapshot) {
+    var obj = snapshot.val();
+
+    console.log(obj.active);
+
+    if(obj.active == false) {
+      // hide waitlist form and display message
+      console.log('Sorry over capacity!');
+    }
+  });
 
   /*
   Log user button clicks Discover and Waitlist Registration 
