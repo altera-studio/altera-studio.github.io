@@ -79,7 +79,7 @@
                 <div class="video-play">
                   <i class="fas fa-play"></i>
                 </div>
-                <img src="assets/img/player-guide-map.png" width="720" height="475" alt="Welcome">
+                <img class="lazy" src="assets/img/player-guide-map.png" width="720" height="475" alt="Welcome">
               </div>
               <div class="intro--options">
                 <a href="#0">
@@ -133,7 +133,7 @@
                   <i class="fas fa-download"></i>
               </div>
               <div class="video--header">
-                <img src="assets/img/Ryze.png" width="32" height="32" />
+                <img class="lazy" data-src="assets/img/Ryze.png" width="32" height="32" />
                 <h2>RYZE'S</h2>
                 <div class="copy-link">
                   <!--<span>http://altera.studio/12735793-0c14-4f09-a4e7-198b122e04b8</span>--><i class="far fa-copy"></i>
@@ -166,7 +166,7 @@
                   <li class="slider--item slider--item-left">
                     <a href="#0">
                       <div class="slider--item-image">
-                        <img src="assets/img/work-victory.jpg" alt="Victory">
+                        <img class="lazy" data-src="assets/img/work-victory.jpg" alt="Victory">
                       </div>
                       <p class="slider--item-title">Champion Tracking</p>
                       <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
@@ -175,7 +175,8 @@
                   <li class="slider--item slider--item-center">
                     <a href="#0">
                       <div class="slider--item-image">
-                        <video preload="metadata" style="border-radius: 50%;overflow: hidden;width: 100%;top: 0px;left: 0px;position: absolute;object-fit:cover;object-position:center center" autoplay playsinline="" loop="" muted="" data-mode="mode-2" class="style__Video-sc-1s9oqga-2 gytcph" data-object-fit="cover" data-object-position="center center">
+                        <video preload="metadata" style="border-radius: 50%;overflow: hidden;width: 100%;top: 0px;left: 0px;position: absolute;object-fit:cover;object-position:center center" autoplay playsinline="" loop="" muted="" data-mode="mode-2"   
+                          data-object-fit="cover" data-object-position="center center">
                           <source src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt04d1a8eb899e9dd4/5d87c234c7fab32df76ddee5/summonersrift.mp4" srcset="720w https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt04d1a8eb899e9dd4/5d87c234c7fab32df76ddee5/summonersrift.mp4" type="video/mp4">
                         </video>
                       </div>
@@ -186,7 +187,7 @@
                   <li class="slider--item slider--item-right">
                     <a href="#0">
                       <div class="slider--item-image">
-                        <img src="assets/img/work-metiew-smith.jpg" alt="Alex Nowak">
+                        <img class="lazy" data-src="assets/img/work-metiew-smith.jpg" alt="Alex Nowak">
                       </div>
                       <p class="slider--item-title">Text Extraction</p>
                       <p class="slider--item-description">We generate challenges for you based on your activity to help you train critical skills.</p>
@@ -397,6 +398,15 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
   });
 </script>
 <script src="assets/js/waitlist.js"></script>
+<script src="assets/js/yall.min.js" ></script>
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  yall({
+    observeChanges: true
+  });
+});
+</script>
 <!--<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
 <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>-->
 <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
