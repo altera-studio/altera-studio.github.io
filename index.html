@@ -355,15 +355,15 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
   /* ANALYTICS EVENTS */
 
   $('#early-access').click(function() {
-    firebase.analytics().logEvent('early-access', { user: ''});
+    firebase.analytics().logEvent('cta', { type: 'early-access'});
   });
 
   $('#join-queue-header').click(function() {
-    firebase.analytics().logEvent('join-queue-header', { user: ''});
+    firebase.analytics().logEvent('cta', { user: 'join-queue-header'});
   });
 
   $('#join-queue-form').click(function() {
-    firebase.analytics().logEvent('join-queue-form', { user: ''});
+    firebase.analytics().logEvent('form');
   });
 
 </script>
