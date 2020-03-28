@@ -44,7 +44,7 @@
             <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
             <p>Altera</p>
           </a>
-          <button class="header--cta cta">Join The Queue</button>
+          <button class="header--cta cta" id="join-queue-header">Join The Queue</button>
           <i class="fab fa-twitch"></i>
           <!--<i class="fab fa-mixer"></i>-->
           <!--<div class="header--nav-toggle">
@@ -68,7 +68,7 @@
                 <h1>Videos<br>turned<br>to data</h1>
                 <h4>Get realtime kills, builds, strategies <br>and more from your favorite<br> livestreams</h4>
                 <!--<h4>Altera turns your videos and<br>livestreams into powerful insights</h4>-->
-                <button class="cta">EARLY ACCESS
+                <button class="cta" id="early-access">EARLY ACCESS
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -79,7 +79,11 @@
                 <div class="video-play">
                   <i class="fas fa-play"></i>
                 </div>
-                <img class="lazy" src="assets/img/player-guide-map.png" width="720" height="475" alt="Welcome">
+                <img class="lazy" src="assets/img/player-guide-map.png" width="720" height="475" alt="Welcome" />
+                <div class="pagination">
+                  <i class="fas fa-caret-square-left"></i>
+                  <i class="fas fa-caret-square-right"></i>
+                </div>
               </div>
               <div class="intro--options">
                 <a href="#0">
@@ -262,7 +266,7 @@
                     <label for="email">Email</label>
                   </div>
                 </div>
-                <input type="submit" value="Join the queue">
+                <input type="submit" id="join-queue-form" value="Join the queue">
               </form>
             </div>
           </li>
@@ -299,12 +303,13 @@
       console.log('reset time to ', video.currentTime);
     }
   }, true);
-}()); */
+}()); 
 
 document.getElementById('video').addEventListener('loadedmetadata', function() {
- // this.currentTime = 0;
- // this.playbackRate = 16;
+  this.currentTime = 0;
+  this.playbackRate = 16;
 }, false);
+*/
 </script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
@@ -334,7 +339,7 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script src="assets/js/firebase/anonymous-auth.js"></script>
+<!--<script src="assets/js/firebase/anonymous-auth.js"></script>-->
 <script>
   firebase.database().ref().child('waitlist').on('value', function(snapshot) {
     var obj = snapshot.val();
@@ -347,15 +352,20 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
     }
   });
 
-  /*
-  Log user button clicks Discover and Waitlist Registration 
+  /* ANALYTICS EVENTS */
 
-  // discover
-  firebase.analytics().logEvent('discover_button', { user: ''});
+  $('#early-access').click(function() {
+    firebase.analytics().logEvent('early-access', { user: ''});
+  });
 
-  // waitlist
-  firebase.analytics().logEvent('waitlist_submit', { user: ''});
-  */
+  $('#join-queue-header').click(function() {
+    firebase.analytics().logEvent('join-queue-header', { user: ''});
+  });
+
+  $('#join-queue-form').click(function() {
+    firebase.analytics().logEvent('join-queue-form', { user: ''});
+  });
+
 </script>
 <script src="assets/js/firebase/recommended-build.js"></script>
 <script src="assets/js/farming-score.js"></script>
@@ -390,7 +400,6 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
           $('#recommended-build').append('<img style="border-radius: 30%;" width="48" height="48" src="' + recommended[i] + '"/> ');
   });
 </script>
-<script src="assets/js/waitlist.js"></script>
 <script src="assets/js/yall.min.js" ></script>
 <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script type="text/javascript">

@@ -868,6 +868,17 @@ body {
 	right: -90px;
 }
 
+.intro--banner .pagination {
+	right: 0;
+    position: absolute;
+    z-index: 99;
+	font-size: 28px;
+}
+
+.intro--banner .pagination i {
+	cursor: pointer;
+}
+
 .intro--options {
 	/*text-align: center;*/
 	display: -webkit-box;

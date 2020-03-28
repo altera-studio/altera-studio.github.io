@@ -1,6 +1,10 @@
 function getFarmingScore(duration, role, rank, callback)
 {
-	$.getJSON('./assets/js/farming.json', function(results) {
+	fetch('https://altera.studio/assets/js/farming.json')
+	.then((response) => {
+		return response.json();
+	})
+	.then((results) => {
 		var result = {
 			perfectCS : results['perfect-cs'][duration],
 			averageCS : results['average-cs'][role][rank]
