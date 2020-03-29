@@ -873,10 +873,14 @@ body {
     position: absolute;
     z-index: 99;
 	font-size: 28px;
+	margin-top: -42px;
 }
 
 .intro--banner .pagination i {
+	visibility: hidden;
 	cursor: pointer;
+	background: #6f6f6fb5;
+	padding: 5px 14px 5px 15px;
 }
 
 .intro--options {
@@ -957,6 +961,15 @@ body {
 }
 
 @media (max-width: 600px) {
+
+	.intro--banner .pagination i {
+		visibility: visible;
+	}
+
+	.intro--banner .video-play {
+		visibility: hidden;
+	}
+
 	.intro--banner {
 		height: 360px
 	}
