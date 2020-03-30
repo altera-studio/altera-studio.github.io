@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="player"></div>
+<script type="text/javascript" src="https://player.twitch.tv/js/embed/v1.js"></script>
+<script type="text/javascript">
+var options = {
+	width: 640,
+	height: 360,
+		channel: "twitch"
+};
+var player = new Twitch.Player("player", options);
+player.play();
+</script>
+</body>
+</html>
