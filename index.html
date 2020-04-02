@@ -11,6 +11,8 @@
   <meta name="author" content="Bucky Maler">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="shortcut icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/main.css">
   <!--<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <style>
@@ -21,6 +23,44 @@
     .fa-play {
       margin-left: 40%;
       font-size: 18px;
+    }
+    .highcharts-title {
+      text-anchor: left!important;
+    }
+    .highcharts-figure, .highcharts-data-table table {
+      /* min-width: 360px; 
+      max-width: 800px; */
+      margin: 1em auto;
+    }
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    .highcharts-credits {
+      display: none;
     }
   </style>
 </head>
@@ -60,14 +100,14 @@
           </ul>
         </nav>
         <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
+          <li class="l-section section section">
             <div class="intro">
               <div class="intro--banner">
                 <h1>Every<br>second<br>counts</h1>
                 <!--<h1>Videos<br>turned<br>to data</h1>
                 <h4>Get realtime kills, builds, strategies <br>and more from your favorite<br> livestreams</h4>-->
-                <!--<h1>unlock<br>the data</h1>-->
-                <h4>Improve your gameplay with<br>data from top and trending <br>clips on Twitch</h4><!--your favorite videos</h4>-->
+                <!--<h4>Get skills, builds, strategies<br>and more from your favorite<br>streamers.</h4><b> For free.</b></h4>-->
+                <h4>Learn from your favorite <br>streamers—get kills, builds, <br>strategies and more in<br>realtime.</h4>
                 <button class="cta" id="early-access">EARLY ACCESS
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -101,7 +141,7 @@
               </div>
             </div>
           </li>
-          <li class="l-section section">
+          <li class="l-section section--is-active">
             <div class="about">
               <div class="side-panel">
                   <h2>SKILLS</h2>
@@ -129,12 +169,12 @@
                     <span class="full"></span>
                     <span class="full"></span>
                   </span>
-                  <h2>ITEM SUGGESTIONS</h2>
+                  <h2>BUILD</h2>
                   <div id="recommended-build"><!-- populated --></div>
                   <!--<h2>TIPS</h2>
                   <p>At <b>0:35</b> you should have done X or Y. -->
                   <h2>DATA</h2>
-                  <i class="fas fa-download"></i>
+                  Available to download after stream ends.<br><i class="fas fa-download"></i>
               </div>
               <div class="video--header">
                 <img class="lazy" data-src="assets/img/Ryze.png" width="32" height="32" />
@@ -159,9 +199,52 @@
               <video width="640" height="360" autoplay muted loop>
                 <source src="https://clips-media-assets2.twitch.tv/37270446736-offset-40654.mp4" type="video/mp4">
               </video>
-               <!--<video id="video" width="640" height="360" preload loop controls muted>
-                  <source src="assets/videos/small-video.mp4" type="video/mp4">
-                </video>-->
+
+              <script src="https://code.highcharts.com/highcharts.js"></script>
+              <figure class="highcharts-figure">
+                  <div id="container" style="width: 640px; height: 260px;"></div>
+                  <p class="highcharts-description">
+                      This chart shows how data labels can be added to the data series. This
+                      can increase readability and comprehension for small datasets.
+                  </p>
+              </figure>
+              <script type="text/javascript" src="assets/js/highcharts-theme.js"></script>
+              <script type="text/javascript">
+                Highcharts.chart('container', {
+                  chart: {
+                      type: 'line'
+                  },
+                  title: {
+                      text: 'Creep Score',
+                      style: {
+                          color: '#FFFFFF',
+                          fontWeight: 'bold',
+                      },
+                      align: 'left',
+                      x: 60
+                  },
+                  xAxis: {
+                     // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                  },
+                  yAxis: {
+                      title: {
+                          text: 'Creeps'
+                      }
+                  },
+                  plotOptions: {
+                      line: {
+                          dataLabels: {
+                              enabled: true
+                          },
+                          enableMouseTracking: false
+                      }
+                  },
+                  series: [{
+                      name: 'CS/min',
+                      data: [7, 9, 15, 15, 15, 15, 21, 35, 37, 37, 37, 40, 40, 40, 45, 45, 45, 50, 55, 67, 67, 70, 75, 77, 77, 77, 77, 81]
+                  }]
+              });
+              </script>
               </div>
               <!--<div class="about--options">
                 <a href="#0">
