@@ -5,7 +5,7 @@
 }, null, document.getElementsByTagName('head')[0]); */
 
 Highcharts.theme = {
-    colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+    colors: ['rgb(8, 215, 247)', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
         '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
     chart: {
         backgroundColor: {
@@ -50,15 +50,15 @@ Highcharts.theme = {
         }
     },
     yAxis: {
-        gridLineColor: '#707073',
+        gridLineColor: 'rgba(112, 112, 115, 0.35)',
         labels: {
             style: {
                 color: '#E0E0E3'
             }
         },
-        lineColor: '#707073',
+        lineColor: 'rgba(112, 112, 115, 0.35)',
         minorGridLineColor: '#505053',
-        tickColor: '#707073',
+        tickColor: 'rgba(112, 112, 115, 0.35)',
         tickWidth: 1,
         title: {
             style: {

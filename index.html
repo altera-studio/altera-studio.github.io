@@ -107,7 +107,8 @@
                 <!--<h1>Videos<br>turned<br>to data</h1>
                 <h4>Get realtime kills, builds, strategies <br>and more from your favorite<br> livestreams</h4>-->
                 <!--<h4>Get skills, builds, strategies<br>and more from your favorite<br>streamers.</h4><b> For free.</b></h4>-->
-                <h4>Learn from your favorite <br>streamers—get kills, builds, <br>strategies and more in<br>realtime.</h4>
+                <h4>Join 1000+ people that want <br>free data from their favorite<br>livestreams.</h4>
+                <!--<h4>Learn from your favorite <br>streamers—get kills, builds, <br>strategies and more in<br>realtime.</h4>-->
                 <button class="cta" id="early-access">EARLY ACCESS
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -116,9 +117,12 @@
                   </svg>
                   <span class="btn-background"></span>
                 </button>
-                <div class="video-play">
+                <a id="play-video" class="video-play-button" href="#1">
                   <i class="fas fa-play"></i>
-                </div>
+                </a>
+                <!--<div class="video-play">
+                  <i class="fas fa-play"></i>
+                </div>-->
                 <img class="lazy" src="assets/img/player-guide-map.png" width="720" height="475" alt="Welcome" />
                 <div class="pagination">
                   <i class="fas fa-caret-left"></i>
@@ -196,23 +200,58 @@
                 };
                 var player = new Twitch.Player("livestream", options);
               </script>-->
-              <video width="640" height="360" autoplay muted loop>
+              <video width="640" height="360" autoplay muted loop controls>
                 <source src="https://clips-media-assets2.twitch.tv/37270446736-offset-40654.mp4" type="video/mp4">
               </video>
 
               <script src="https://code.highcharts.com/highcharts.js"></script>
               <figure class="highcharts-figure">
-                  <div id="container" style="width: 640px; height: 260px;"></div>
-                  <p class="highcharts-description">
-                      This chart shows how data labels can be added to the data series. This
-                      can increase readability and comprehension for small datasets.
-                  </p>
+                  <!-- og width: 640px -->
+                  <div id="container" style="width: 500px; height: 260px;"></div>
+                  <div class="chart-icon"></div>
               </figure>
               <script type="text/javascript" src="assets/js/highcharts-theme.js"></script>
               <script type="text/javascript">
-                Highcharts.chart('container', {
+                var chart = Highcharts.chart('container', {
                   chart: {
-                      type: 'line'
+                      type: 'line',
+                      spacingTop: 30,               
+
+                      events: {
+                        load: function() {
+
+                          var series = this.series[0];
+                          var endXValue = series.processedXData[this.series[0].processedYData.length - 1];
+                          
+                          var i = 0;
+                          setInterval(function () {
+                              i++;
+
+                              var x = endXValue + i, 
+                                  y = Math.floor(Math.random() * 26) + 65;
+                              series.addPoint([x, y], true, true);
+                          }, 5000); 
+                          
+                        
+                          /* Average CS line:
+                          var chartDom = document.getElementById('container');
+                          var chart = Highcharts.charts[Highcharts.attr(chartDom, 'data-highcharts-chart')];
+                          var data_New = [];
+                          var plotValue = 75;
+                          
+                          for (i = 0; i < chart.xAxis[0].series[0].xData.length; i++) {
+                            data_New[i] = plotValue;
+                          }
+
+                          chart.addSeries({
+                              name: 'Average CS',
+                              color: 'rgb(255, 255, 255, .5)',
+                              marker: { enabled : false },
+                              data: data_New
+                          });
+                          */
+                        }
+                      } 
                   },
                   title: {
                       text: 'Creep Score',
@@ -234,16 +273,22 @@
                   plotOptions: {
                       line: {
                           dataLabels: {
-                              enabled: true
+                              enabled: true,
+                              formatter: function() { if(this.point.x % 5 == 0) return this.y; return ''; }
                           },
-                          enableMouseTracking: false
+                          enableMouseTracking: true,
+                      },
+                      series: {
+                          marker: {
+                              radius: 3
+                          }
                       }
                   },
                   series: [{
-                      name: 'CS/min',
+                      name: 'CS / min',
                       data: [7, 9, 15, 15, 15, 15, 21, 35, 37, 37, 37, 40, 40, 40, 45, 45, 45, 50, 55, 67, 67, 70, 75, 77, 77, 77, 77, 81]
                   }]
-              });
+              });              
               </script>
               </div>
               <!--<div class="about--options">
@@ -358,13 +403,13 @@
                   </span>
                 </div>
                 <div class="work-request--information">
-                  <!--<div class="information-email">
+                  <div class="information-email">
                     <input id="email" type="email" name="email" spellcheck="false" required>
                     <label for="email">Email</label>
-                  </div>-->
+                  </div>
                 </div>
                 <div class="input-icons">
-                  <i class="fab fa-twitch icon"></i>
+                  <!--<i class="fab fa-twitch icon"></i>-->
                   <input type="submit" id="join-queue-form" value="Join the queue">
                 </div>
               </form>

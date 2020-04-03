@@ -41,7 +41,6 @@ html {
 
 body {
 	margin: 0;
-	overflow: hidden;
 }
 
 article,
@@ -297,8 +296,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	box-shadow: 0 0 45px 5px rgba(0, 0, 0, 0.85);
-	overflow: hidden
+	/* box-shadow: 0 0 45px 5px rgba(0, 0, 0, 0.85); */
 }
 
 .l-wrapper {
@@ -354,9 +352,9 @@ body {
 }
 
 .l-section {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	height: 100%
+	height: 90%
 }
 
 .device-notification {
@@ -448,8 +446,8 @@ body {
 }
 
 .section {
-	opacity: 0;
-	visibility: hidden;
+	/* opacity: 0;
+	visibility: hidden; */
 	-webkit-transition: opacity .4s ease-in-out, visibility 0s .4s;
 	transition: opacity .4s ease-in-out, visibility 0s .4s
 }
@@ -481,14 +479,16 @@ body {
 }
 
 .header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	width: 100%;
+	width: 90%;
+    padding-left: 10%;
+    background-color: transparent;
 	height: 70px;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
@@ -574,6 +574,7 @@ body {
 	display: flex;
 	width: 50px;
 	height: 50px;
+	padding: 10%;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -789,8 +790,8 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: #6f6f6fb8;
   border-radius: 50%;
   -webkit-animation: pulse-border 1500ms ease-out infinite;
@@ -806,8 +807,8 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: #6f6f6fb8;
   border-radius: 50%;
   -webkit-transition: all 200ms;
@@ -956,21 +957,6 @@ body {
 	position: absolute;
 	bottom: 21px;
 	right: -90px;
-}
-
-.intro--banner .pagination {
-	right: 0;
-    position: absolute;
-    z-index: 99;
-	font-size: 28px;
-	margin-top: -42px;
-}
-
-.intro--banner .pagination i {
-	visibility: hidden;
-	cursor: pointer;
-	background: #6f6f6fb5;
-	padding: 5px 14px 5px 15px;
 }
 
 .intro--options {
@@ -1346,7 +1332,7 @@ body {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	margin: 0 auto
+	margin: -150px auto;
 }
 
 .about .side-panel {
@@ -1963,7 +1949,6 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	overflow: hidden
 }
 
 .perspective--modalview {
@@ -1977,7 +1962,6 @@ body {
 	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
 	transform: translateZ(0) translateX(0) rotateY(0deg);
 	min-height: 100%;
-	outline: 30px solid #0f33ff;
 	-webkit-transition: -webkit-transform .4s;
 	transition: -webkit-transform .4s;
 	transition: transform .4s;
@@ -1988,7 +1972,6 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden
 }
