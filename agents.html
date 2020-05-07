@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Altera - Free Data From Game Clips and Replays</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Altera gets realtime kills, builds, strategies and more from your favorite clips and replays. Sign up to join our queue and receive a prize.">
+  <meta name="keywords" content="Altera, videos, replays, League of Legends, lol, clips, data, machine learning, computer vision">
+  <meta name="author" content="Bucky Maler">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/valorant.css">
+  <style>
+    .fa-play {
+      margin-left: 40%;
+      font-size: 18px;
+    }
+    .highcharts-title {
+      text-anchor: left!important;
+    }
+    .highcharts-figure, .highcharts-data-table table {
+      /* min-width: 360px; 
+      max-width: 800px; */
+      margin: 1em auto;
+    }
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    .highcharts-credits {
+      display: none;
+    }
+    .channel-header-verified-badge, .tw-root--theme-dark .channel-header-verified-badge, .tw-root--theme-light .channel-header-verified-badge {
+    color: #9147ff;
+    }
+  </style>
+</head>
+<body>
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
+    <p>Altera</p>
+  </a>
+  <p class="device-notification--message">Altera has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <header class="header">
+    <a class="header--logo" href="#0">
+      <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
+      <p>Altera</p>
+    </a>
+    <button class="header--cta cta" id="join-queue-header">Join The Queue</button>
+    <span>Learn</span>
+    <span>Partner</span>
+    <span>Guides</span>
+    <button class="cta" id="early-access">Early Access<span class="btn-background"></span></button>
+    <!--<i class="fab fa-twitch"></i>
+    <i class="fab fa-mixer"></i>-->
+    <!--<div class="header--nav-toggle">
+      <span></span>
+    </div>-->
+  </header>
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <ul class="l-main-content main-content">
+          <li class="l-section section live-video">
+            <div class="about">
+              <div style="width: 400px!important;left: 0px!important;" class="side-panel">
+                  <p>Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off forceful assaults, she provides a calm center to a hellish battlefield.</p>
+
+                  <h2>PLAY LIKE THE PROS</h2>
+                  <p>We give you the recommendations and the data. You create your own builds and strategies.</p>
+                  <span class="bar">
+                    <span class="text">Fighting</span>
+                    <span class="full"></span>
+                    <span class="full"></span>
+                    <span class="empty"></span>
+                  </span>
+                  <span class="bar">
+                    <span class="text">Farming</span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                  </span>
+                  <span class="bar">
+                    <span class="text">Position</span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                  </span>
+                  <span class="bar">
+                    <span class="text">Survival</span>
+                    <span class="full"></span>
+                    <span class="full"></span>
+                    <span class="full"></span>
+                  </span>
+              </div>
+              <div class="about--banner">
+                <h2>SAGE</h2>
+                <img style="position: absolute;right:0px;" src="assets/img/valorant-sage.png" width="425" height="425" alt="Picture of Valorant's Omen">
+              </div>
+              <!--<h2>SORT BY AGENTS</h2>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Viper</h3>
+                </a>
+                <a href="#0">
+                  <h3>Sova</h3>
+                </a>
+                <a href="#0">
+                  <h3>Sage</h3>
+                </a>
+              </div>
+              <div style="margin-top: 30px" class="about--options">
+                <a href="#0">
+                  <h3>Viper</h3>
+                </a>
+                <a href="#0">
+                  <h3>Viper</h3>
+                </a>
+                <a href="#0">
+                  <h3>More soon...</h3>
+                </a>
+              </div>-->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--<ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Works</li>
+    <li>Profile</li>
+    <li>Hire us</li>-->
+  </ul>
+</div>
+<script src="https://kit.fontawesome.com/1cc2607717.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Altera - Free Interactive Learning With Twitch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Altera gets realtime kills, builds, strategies and more from your favorite clips and replays. Sign up to join our queue and receive a prize.">
+  <meta name="keywords" content="Altera, videos, replays, League of Legends, lol, clips, data, machine learning, computer vision">
+  <meta name="author" content="Bucky Maler">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/valorant.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-animation.min.css">
+  <style>
+    .fa-play {
+      margin-left: 40%;
+      font-size: 18px;
+    }
+    .highcharts-title {
+      text-anchor: left!important;
+    }
+    .highcharts-figure, .highcharts-data-table table {
+      /* min-width: 360px; 
+      max-width: 800px; */
+      margin: 1em auto;
+    }
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    .highcharts-credits {
+      display: none;
+    }
+    .channel-header-verified-badge, .tw-root--theme-dark .channel-header-verified-badge, .tw-root--theme-light .channel-header-verified-badge {
+    color: #9147ff;
+    }
+  </style>
+</head>
+<body>
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
+    <p>Altera</p>
+  </a>
+  <p class="device-notification--message">Altera has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <header class="header">
+    <a class="header--logo" href="#0">
+      <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
+      <p>Altera</p>
+      <span style="margin-left: 12px; margin-top: 8px;">
+      <!--<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="32" width="32" viewBox="0 0 100 100">
+        <path d="M99.25 48.66V10.28c0-.59-.75-.86-1.12-.39l-41.92 52.4a.627.627 0 00.49 1.02h30.29c.82 0 1.59-.37 2.1-1.01l9.57-11.96c.38-.48.59-1.07.59-1.68zM1.17 50.34L32.66 89.7c.51.64 1.28 1.01 2.1 1.01h30.29c.53 0 .82-.61.49-1.02L1.7 9.89c-.37-.46-1.12-.2-1.12.39v38.38c0 .61.21 1.2.59 1.68z" fill="#FF4655"></path>
+      </svg>--></span>
+    </a>
+    <button class="header--cta cta" id="join-queue-header">Join The Queue</button>
+    <span>Learn</span>
+    <span>Play</span>
+    <span><a href="agents.html">Guides</a></span>
+    <button class="cta" id="early-access">Early Access<span class="btn-background"></span></button>
+    <!--<i class="fab fa-twitch"></i>
+    <i class="fab fa-mixer"></i>-->
+    <!--<div class="header--nav-toggle">
+      <span></span>
+    </div>-->
+  </header>
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <div class="headline">
+                  <h1>Learn<br>with<br>twitch</h1>
+                  <h4>Join 1000+ people that want <br>a free way to learn <a href="www.playvalorant.com">Valorant</a><br>with top streamers</h4>
+                  <button class="cta" id="early-access">EARLY ACCESS
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                    <span class="btn-background"></span>
+                  </button>
+                  <!--<iframe frameborder="0"
+                          scrolling="no"
+                          id="chat_embed"
+                          src="https://www.twitch.tv/embed/hebo/chat?parent=streamernews.example.com&darkpopout"
+                          height="500"
+                          width="350">
+                  </iframe>-->
+                </div>
+                <div class="video-overlay"></div>
+                <video autoplay muted loop>
+                  <source src="https://clips-media-assets2.twitch.tv/AT-cm%7C663258584.mp4" type="video/mp4">
+                </video>
+                <div id="play-video" class="altera-tip">
+                  ?<!--<i class="fas fa-play"></i>-->
+                </div>
+                <div class="annotations">
+                  <p>0:05: What is<img src="https://rerollcdn.com/VALORANT/Agents/Omen.png" width="32" height="32" /><b class="defender">Omen's</b> best ability?</p>
+                  <p>0:07: new insights available. <span class="challenge-loot"><i style="font-size: 14px" class="fas fa-box faa-tada animated"></i></span><i style="font-size: 14px" class="fas fa-box-open"></i></p>
+                </div>
+                <!--<div class="video-play">
+                  <i class="fas fa-play"></i>
+                </div>-->
+              </div>
+              <!-- #C28F2C -->
+              <!--<div class="intro--options">
+                <a href="#0">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="32" width="32" viewBox="0 0 100 100">
+                    <path d="M99.25 48.66V10.28c0-.59-.75-.86-1.12-.39l-41.92 52.4a.627.627 0 00.49 1.02h30.29c.82 0 1.59-.37 2.1-1.01l9.57-11.96c.38-.48.59-1.07.59-1.68zM1.17 50.34L32.66 89.7c.51.64 1.28 1.01 2.1 1.01h30.29c.53 0 .82-.61.49-1.02L1.7 9.89c-.37-.46-1.12-.2-1.12.39v38.38c0 .61.21 1.2.59 1.68z" fill="#FF4655"></path>
+                  </svg>
+                </a>
+                <a href="#0">
+                    <svg class="league" width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)">
+                    <path d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z" fill="rgba(255,255,255,.2)"></path><path d="M15 2.02222C13.7829 2.02222 12.602 2.16921 11.4688 2.43647V4.75718C12.5907 4.44093 13.7738 4.26721 15 4.26721C22.0218 4.26721 27.7153 9.84627 27.7153 16.7305C27.7153 19.8307 26.5571 22.6659 24.6464 24.8463L24.2838 26.118L23.4814 28.9331C27.4184 26.2761 30.0023 21.8195 30.0023 16.7705C30 8.62355 23.2843 2.02222 15 2.02222Z" fill="rgba(255,255,255,.2)"></path>
+                    <path d="M11.4688 24.4209H22.9737H23.2253C25.1723 22.4209 26.3713 19.7126 26.3713 16.7305C26.3713 10.5746 21.2806 5.58569 15 5.58569C13.767 5.58569 12.5816 5.78168 11.4688 6.1358V24.4209Z" fill="rgba(255,255,255,.2)"></path><path d="M10.1088 0H1.55029L3.16634 3.29844V28.7038L1.55029 32H21.1922L22.9737 25.7572H10.1088V0Z" fill="rgba(255,255,255,.2)"></path></g><defs><clipPath id="clip0"><rect width="30" height="32" fill="white"></rect></clipPath></defs>
+                  </svg>
+                </a>
+                <a href="#0">
+                </a>
+              </div>-->
+            </div>
+          </li>
+          <li class="l-section section live-video">
+            <div class="about">
+              <div style="width: 400px!important;left: 0px!important;top: 0px;" class="side-panel">
+                  <h2>LEARN ON YOUR OWN TIME</h2>
+                  <p>Tune in and learn whenever you like. It's just like streaming for fun.</p>
+
+                  <h2>GET EXCLUSIVE INSIGHTS</h2>
+                  <p>We process livestreams to retrieve important game insights in realtime.</p>
+ 
+                  <h2>HELP BUILD THE COMMUNITY</h2>
+                  <p>Add your own annotations and help others learn how to play too.</p>
+              </div>
+              <div class="video--header">
+                <img style="position: absolute;right:0px;" src="assets/img/valorant-sage.png" width="425" height="425" alt="Picture of Valorant's Omen">
+              </div>
+              <div class="about--banner">
+
+              </div>
+              <h2>SORT BY AGENTS</h2>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Jett</h3>
+                </a>
+                <a href="#0">
+                  <h3>Cypher</h3>
+                </a>
+                <a href="#0">
+                  <h3>Phoenix</h3>
+                </a>
+              </div>
+              <div style="margin-top: 30px" class="about--options2">
+                <a href="#0">
+                  <h3>Sova</h3>
+                </a>
+                <a href="#0">
+                  <h3>More...</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section queue">
+            <div class="over-capacity" style="display:none;">Sorry! Due to high demand, our waitlist is closed. We're working to have it up again today.</div>
+            <div class="hire">
+              <h2 id="demo"></h2>
+              <h4>Choose a box below and submit<br>for early access and a random boost up the waitlist</h4>
+              <form action="https://send.pageclip.co/ADeuB60OO8bkEhxoSc6QyL4V697viJJp" class="work-request" method="post">
+                <div class="work-request--options">
+                  <span class="options-a">
+                    <input id="opt-1" type="checkbox" name="box" value="box 1">
+                    <label for="opt-1">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      ?
+                    </label>
+                    <input id="opt-2" type="checkbox" name="box" value="box 2">
+                    <label for="opt-2">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      ?
+                    </label>            
+                  </span>
+                  <span class="options-b">
+                    <input id="opt-3" type="checkbox" name="box" value="box 3">
+                    <label for="opt-3">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      ?
+                    </label>
+                  </span>
+                </div>
+                <div class="work-request--information">
+                  <div class="information-email">
+                    <input id="email" type="email" name="email" spellcheck="false" required>
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="input-icons">
+                  <!--<i class="fab fa-twitch icon"></i>-->
+                  <input type="submit" id="join-queue-form" value="JOIN THE QUEUE">
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </ul>
+</div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<script src="https://kit.fontawesome.com/1cc2607717.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+/* Prevent video fast-forwarding but allow back-tracking 
+(function () {
+  var video = document.getElementById('video'),
+       previousTime = 0;
+
+  video.addEventListener('timeupdate', function (evt) {
+    if (!video.seeking) {
+        previousTime = Math.max(previousTime, video.currentTime);
+    }
+  }, false);
+
+  video.addEventListener('seeking', function (evt) {
+    console.log('seeking', video.currentTime, previousTime);
+    if (video.currentTime > previousTime) {
+      video.currentTime = previousTime;
+      console.log('reset time to ', video.currentTime);
+    }
+  }, true);
+}()); 
+
+document.getElementById('video').addEventListener('loadedmetadata', function() {
+  this.currentTime = 0;
+  this.playbackRate = 16;
+}, false);
+*/
+</script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script type="text/javascript">
+$(document).scroll(function() {
+    if($(this).scrollTop() > 25)
+    {   
+       $('.header').css({"background-color":"#121212"});
+       $('.header .cta').css({"visibility":"visible"});
+    } else {
+       $('.header').css({"background-color":"transparent"});
+       $('.header .cta').css({"visibility":"hidden"});
+    }
+});
+
+$('a#play-video.video-play-button').click(function() {
+  $('html, body').animate({ scrollTop: $('.live-video').offset().top}, 'slow');
+});
+
+$('button#early-access.cta').click(function() {
+  $('html, body').animate({ scrollTop: $('.queue').offset().top}, 'slow');
+});
+</script>
+<!--<script src="assets/js/free-scroll.js"></script>-->
+<script src="assets/js/yall.min.js" ></script>
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  yall({
+    observeChanges: true
+  });
+});
+</script>
+<!--<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>-->
+<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+</body>
+</html>

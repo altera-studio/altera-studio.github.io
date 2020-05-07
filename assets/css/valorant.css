@@ -517,11 +517,16 @@ body {
 	cursor: pointer;
 }
 
+.header a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
 .header i {
 	font-size: 21px;
-    position: absolute;
+    /* position: absolute;
     right: 10px;
-    top: 25px;
+    top: 25px; */
     cursor: pointer;
 }
 
@@ -786,6 +791,7 @@ body {
 }
 
 .intro--banner .headline {
+	z-index: 98;
 	text-align: left;
 	float: left;
 } 
@@ -795,19 +801,91 @@ body {
 	color: #ffffff;
 }
 
-.video-play-button {
-	cursor: pointer;
+.intro--banner .annotations {
 	z-index: 98;
-	background: #6f6f6fb8;
-	width: 50px;
-	height: 50px;
 	position: absolute;
-	right: 230px;
-	bottom: 300px;
-	border-radius: 50px;
+	right: -62px;
+	top: 80px;
+	background: rgba(12, 12, 12, .75);
+	width: 210px;
+	height: 300px;
+	border-radius: 8px;
 }
 
-.video-play-button:before {
+.intro--banner .annotations p {
+	padding: 12px;
+}
+
+.intro--banner .annotations img {
+	margin-left: 4px;
+	vertical-align: middle;
+	border: 4px solid #000000;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.intro--banner .defender {
+	margin-left: 5px;
+	color: #39ca9b!important;
+}
+
+.intro--banner .challenge-loot {
+	margin-left: 4px;
+	background: #39ca9b;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 7px 9px;
+}
+
+.intro--banner i {
+	cursor: pointer;
+	z-index: 99;
+	line-height: 30px;
+	color: #111111;
+	left: 10px;
+    font-size: 18px;
+}
+
+.intro--banner .fa-expand {
+	color: #ffffff!important;
+}
+
+.intro--banner .video-overlay {
+	z-index: 98;
+	position: absolute;
+	left: 300px;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: rgba(12,12,12,.65);
+}
+
+.intro--banner video {
+	position: absolute;
+	width: 600px;
+	height: 340px;
+	top: 65px;
+	right: -75px;
+}
+
+.altera-tip {
+	cursor: pointer;
+	z-index: 99;
+	background: transparent;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: -60px;
+	bottom: 110px;
+	line-height: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.altera-tip:before {
   content: "";
   position: absolute;
   z-index: -2;
@@ -816,15 +894,15 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 35px;
+  height: 35px;
   background: #6f6f6fb8;
-  border-radius: 50%;
+  border-radius: 5%;
   -webkit-animation: pulse-border 1500ms ease-out infinite;
           animation: pulse-border 1500ms ease-out infinite;
 }
 
-.video-play-button:after {
+.altera-tip:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -833,10 +911,10 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 30px;
+  height: 30px;
   background: #6f6f6fb8;
-  border-radius: 50%;
+  border-radius: 5%;
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
@@ -889,14 +967,6 @@ body {
 	right: 230px;
     bottom: 300px;
     border-radius: 50px;
-}
-
-.intro--banner .fa-play {
-	cursor: pointer;
-	z-index: 99;
-	line-height: 50px;
-	color: #ffff;
-    font-size: 22px;
 }
 
 .intro--banner::before {
@@ -979,29 +1049,19 @@ body {
 	fill: #fff
 }
 
-.intro--banner img {
-	position: absolute;
-	bottom: 21px;
-	right: -90px;
-}
-
 .intro--options {
 	/*text-align: center;*/
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
 	margin: 0;
 	padding: 0;
-	list-style: none
+	list-style: none;
 }
 
 .intro--options>a {
-	max-width: 250px;
+	max-width: 50px;
 	text-decoration: none;
 	color: #333333;/*color: #282828;*/
 	-webkit-transition: color .2s ease-in-out;
@@ -1028,9 +1088,6 @@ body {
 	.intro--banner h1 {
 		font-size: 55px
 	}
-	.intro--banner img {
-		width: 430px
-	}
 	.intro--options>a {
 		margin-right: 30px
 	}
@@ -1045,9 +1102,6 @@ body {
 	}
 	.intro--banner h1 {
 		font-size: 44px
-	}
-	.intro--banner img {
-		width: 330px
 	}
 	.intro--options {
 		display: block
@@ -1077,9 +1131,6 @@ body {
 	}
 	.intro--banner h1 {
 		font-size: 55px
-	}
-	.intro--banner img {
-		display: none
 	}
 }
 
@@ -1362,7 +1413,7 @@ body {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	margin: -100px auto;
+	margin: -20px auto;
 }
 
 .about .side-panel {
@@ -1426,8 +1477,8 @@ body {
 .about--banner::before {
 	content: "";
 	position: absolute;
-	top: -10px;
-	right: 0px;
+	top: 40px;
+    right: 300px;
 	-webkit-transform: rotate(-25deg);
 	transform: rotate(-25deg);
 	border: 5px solid var(--main-color);
@@ -1438,8 +1489,8 @@ body {
 .about--banner::after {
 	content: "";
 	position: absolute;
-	top: 45px;
-	right: 20px;
+	top: 110px;
+    right: 330px;
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 	width: 10px;
@@ -1460,7 +1511,7 @@ body {
 	content: "";
 	position: absolute;
 	top: 60px;
-	left: 268px;
+	left: 228px;
 	width: 30px;
 	height: 30px;
 	background-color: var(--main-color);
@@ -1505,7 +1556,7 @@ body {
 	right: -12px
 }
 
-.about--options {
+.about--options, .about--options2 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -1520,7 +1571,7 @@ body {
 	list-style: none
 }
 
-.about--options>a {
+.about--options>a, .about--options2>a {
 	position: relative;
 	width: 150px;
 	height: 75px;
@@ -1533,22 +1584,41 @@ body {
 }
 
 .about--options>a:nth-child(1) {
-	background-image: url("../thumbnails/teamfight.jpg")
+	background-image: url("../thumbnails/jett.png");
+	background-size: 150px;
+	background-position: 45% 22%;
 }
 
 .about--options>a:nth-child(2) {
-	background-image: url("../thumbnails/farming.png")
+	background-image: url("https://rerollcdn.com/VALORANT/Agents/Cypher-full.png");
+	background-size: 150px;
+	background-position: 45% 22%;
 }
 
 .about--options>a:nth-child(3) {
-	background-image: url("../thumbnails/lucian.jpg")
+	background-image: url("https://rerollcdn.com/VALORANT/Agents/Phoenix-full.png");
+	background-size: 150px;
+	background-position: 45% 22%;
+
 }
 
-.about--options>a:hover h3 {
+.about--options2>a:nth-child(1) {
+	background-image: url("https://rerollcdn.com/VALORANT/Agents/Sova-full.png");
+	background-size: 150px;
+	background-position: 45% 22%;
+}
+
+.about--options2>a:nth-child(2) {
+	background-image: none;
+	background-size: 150px;
+	background-position: 45% 22%;
+}
+
+.about--options>a:hover h3, .about--options2>a:hover h3 {
 	bottom: -50px
 }
 
-.about--options h3 {
+.about--options h3, .about--options2>a h3 {
 	position: absolute;
 	bottom: -38px;
 	left: 10px;
@@ -1612,7 +1682,7 @@ body {
 	.about--banner img {
 		display: none
 	}
-	.about--options {
+	.about--options, .about--options2 {
 		display: none
 	}
 }
@@ -2189,4 +2259,46 @@ body {
 	background: #111111;
 	width: 50px;
 	height: 50px;
+}
+
+/* Twitch */
+.tw-button--success {
+    background-color: var(--color-background-button-success);
+    color: var(--color-text-button-success);
+}
+.claimable-bonus__icon {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: bonus-icon-wiggle;
+    -webkit-animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-name: bonus-icon-wiggle;
+    animation-timing-function: ease-out;
+    transform-origin: center bottom;
+}
+.tw-button {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    align-items: center;
+    background-color: var(--color-background-button-primary-default);
+    border-radius: 4px;
+    border-radius: var(--border-radius-medium);
+    color: var(--color-text-button);
+    display: inline-flex;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 3rem;
+    height: var(--button-size-default);
+    justify-content: center;
+    line-height: 2rem;
+    outline: none;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
 }

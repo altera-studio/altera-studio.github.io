@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Altera - Free Data From Game Clips and Replays</title>
+  <title>Altera - Free Interactive Learning With Twitch</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon-precomposed" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/free-scroll.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-animation.min.css">
   <!--<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <style>
     .work-request--options label {
@@ -62,6 +63,9 @@
     .highcharts-credits {
       display: none;
     }
+    .channel-header-verified-badge, .tw-root--theme-dark .channel-header-verified-badge, .tw-root--theme-light .channel-header-verified-badge {
+    color: #9147ff;
+    }
   </style>
 </head>
 <body>
@@ -78,14 +82,22 @@
   <header class="header">
     <a class="header--logo" href="#0">
       <img width="28" height="23" src="assets/img/logo.png" alt="Altera">
-      <p>Altera</p>
+      <p>Altera &nbsp;/</p>
+    <span style="margin-left: 12px; margin-top: 8px;"><svg class="league" width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)">
+      <path d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z" fill="#C28F2C "></path><path d="M15 2.02222C13.7829 2.02222 12.602 2.16921 11.4688 2.43647V4.75718C12.5907 4.44093 13.7738 4.26721 15 4.26721C22.0218 4.26721 27.7153 9.84627 27.7153 16.7305C27.7153 19.8307 26.5571 22.6659 24.6464 24.8463L24.2838 26.118L23.4814 28.9331C27.4184 26.2761 30.0023 21.8195 30.0023 16.7705C30 8.62355 23.2843 2.02222 15 2.02222Z" fill="#C28F2C "></path>
+      <path d="M11.4688 24.4209H22.9737H23.2253C25.1723 22.4209 26.3713 19.7126 26.3713 16.7305C26.3713 10.5746 21.2806 5.58569 15 5.58569C13.767 5.58569 12.5816 5.78168 11.4688 6.1358V24.4209Z" fill="#C28F2C "></path><path d="M10.1088 0H1.55029L3.16634 3.29844V28.7038L1.55029 32H21.1922L22.9737 25.7572H10.1088V0Z" fill="#C28F2C "></path></g><defs><clipPath id="clip0"><rect width="30" height="32" fill="white"></rect></clipPath></defs>
+    </svg>
     </a>
     <button class="header--cta cta" id="join-queue-header">Join The Queue</button>
-    <!--<i class="fab fa-twitch"></i>-->
-    <!--<i class="fab fa-mixer"></i>-->
-    <div class="header--nav-toggle">
+    <span>Learn</span>
+    <span>Teach</span>
+    <span>Our Blog</span>
+    <button class="cta" id="early-access">Early Access<span class="btn-background"></span></button>
+    <!--<i class="fab fa-twitch"></i>
+    <i class="fab fa-mixer"></i>-->
+    <!--<div class="header--nav-toggle">
       <span></span>
-    </div>
+    </div>-->
   </header>
   <div class="container"><div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
@@ -94,20 +106,18 @@
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>Every<br>second<br>counts</h1>
-                <!--<h1>Videos<br>turned<br>to data</h1>
-                <h4>Get realtime kills, builds, strategies <br>and more from your favorite<br> livestreams</h4>-->
-                <!--<h4>Get skills, builds, strategies<br>and more from your favorite<br>streamers.</h4><b> For free.</b></h4>-->
-                <h4>Join 1000+ people that want <br>to learn from their favorite<br>streamers on Altera.</h4>
-                <!--<h4>Learn from your favorite <br>streamers—get kills, builds, <br>strategies and more in<br>realtime.</h4>-->
-                <button class="cta" id="early-access">EARLY ACCESS
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                  <span class="btn-background"></span>
-                </button>
+                <div class="headline">
+                  <h1>Learn<br>with<br>twitch</h1>
+                  <h4>Join 1000+ people that want <br>a free way to learn <a href="www.playvalorant.com">Valorant</a><br>with top streamers</h4>
+                  <button class="cta" id="early-access">EARLY ACCESS
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                    <span class="btn-background"></span>
+                  </button>
+                </div>
                 <a id="play-video" class="video-play-button" href="#1">
                   <i class="fas fa-play"></i>
                 </a>
@@ -132,12 +142,16 @@
               </div>-->
             </div>
           </li>
-          <li class="l-section section">
+          <li class="l-section section live-video">
             <div class="about">
-              <h2>Under the hood</h2>
               <div class="side-panel">
-                  <h2>SKILLS</h2>
-                  <span class="bar">
+                  <h2>LEARN ON YOUR OWN TIME</h2>
+                  <p>Tune in and learn whenever you like. It's just like streaming for fun.</p>
+
+                  <h2>PLAY LIKE THE PROS</h2>
+                  <p>We give you the recommendations and the data. You create your own builds and strategies.</p>
+
+                  <!--<span class="bar">
                     <span class="text">Fighting</span>
                     <span class="full"></span>
                     <span class="full"></span>
@@ -160,7 +174,7 @@
                     <span class="full"></span>
                     <span class="full"></span>
                     <span class="full"></span>
-                  </span>
+                  </span>-->
                   <h2>BUILD</h2>
                   <div id="recommended-build"><!-- populated --></div>
                   <!--<h2>TIPS</h2>
@@ -169,10 +183,14 @@
                   Available to download after stream ends.<br><i class="fas fa-download"></i>
               </div>
               <div class="video--header">
-                <img class="lazy" data-src="assets/img/Ryze.png" width="32" height="32" />
-                <h2>RYZE'S</h2>
+                <img src="assets/img/loltyler.png" width="32" height="32" />
+                <!--<img class="lazy" data-src="assets/img/Ryze.png" width="32" height="32" />-->
+                <h2 class="username">loltyler1</h2>
+                <svg class="tw-svg__asset tw-svg__asset--inherit tw-svg__asset--verified" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                  <path fill="#9147ff" fill-rule="evenodd" clip-rule="evenodd" d="M10 2l6 2 2 6-2 6-6 2-6-2-2-6 2-6 6-2zM8.889 13.636l5.43-5.429-1.415-1.414-4.015 4.015-2.015-2.015-1.414 1.414 3.429 3.43z"></path>
+                </svg>
                 <div class="copy-link">
-                  <!--<span>http://altera.studio/12735793-0c14-4f09-a4e7-198b122e04b8</span>--><i class="far fa-copy"></i>
+                  <i class="far fa-eye"></i><span>1,201</span>
                 </div>
               </div>
               <div class="about--banner">
@@ -188,14 +206,17 @@
                 };
                 var player = new Twitch.Player("livestream", options);
               </script>-->
-              <video width="640" height="360" autoplay muted loop controls>
-                <source src="https://clips-media-assets2.twitch.tv/37270446736-offset-40654.mp4" type="video/mp4">
+              <video width="580" height="325" autoplay muted loop>
+                <source src="https://clips-media-assets2.twitch.tv/AT-cm%7C659489360.mp4" type="video/mp4">
               </video>
 
               <script src="https://code.highcharts.com/highcharts.js"></script>
+              <figure>
+                Coach's Comments
+              </figure>
               <figure class="highcharts-figure">
                   <!-- og width: 640px -->
-                  <div id="container" style="width: 300px; height: 260px;"></div>
+                  <div id="container" style="width: 420px; height: 260px;"></div>
                   <div class="chart-icon"></div>
               </figure>
               <script type="text/javascript" src="assets/js/highcharts-theme.js"></script>
@@ -292,7 +313,7 @@
               </div>-->
             </div>
           </li>
-           <li class="l-section section">
+          <!-- <li class="l-section section">
             <div class="work">
               <h2>Under the hood</h2>
               <div class="work--lockup">
@@ -347,12 +368,22 @@
                 </div>
               </div>
             </div>
+          </li> -->
+          <li class="l-section section annotations">
+            <div class="over-capacity" style="display:none;">Sorry! Due to high demand, our waitlist is closed. We're working to have it up again today.</div>
+            <div class="hire">
+              <h2>Smart Annotations</h2>
+              <h4>Choose a box below and submit<br>for early access and a random boost up the waitlist</h4>
+              <img src="assets/img/map.png" width="250" height="250" />
+              <h3><b>Sam, 21 (early beta user): I used the smart annotations tool to take notes on <a href="#">shadow4's</a> stream and build my own
+              strategies.</h3>
+            </div>
           </li>
-          <li class="l-section section">
+          <li class="l-section section queue">
             <div class="over-capacity" style="display:none;">Sorry! Due to high demand, our waitlist is closed. We're working to have it up again today.</div>
             <div class="hire">
               <h2>Early access</h2>
-              <h4>Choose a box below and submit<br>to BOOST up the queue by x1, x2, or x5</h4>
+              <h4>Choose a box below and submit<br>for early access and a random boost up the waitlist</h4>
               <form action="https://send.pageclip.co/ADeuB60OO8bkEhxoSc6QyL4V697viJJp" class="work-request" method="post">
                 <div class="work-request--options">
                   <span class="options-a">
@@ -445,13 +476,23 @@ document.getElementById('video').addEventListener('loadedmetadata', function() {
 </script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script type="text/javascript">
-$(document).scroll(function(){
+$(document).scroll(function() {
     if($(this).scrollTop() > 25)
     {   
        $('.header').css({"background-color":"#121212"});
+       $('.header .cta').css({"visibility":"visible"});
     } else {
        $('.header').css({"background-color":"transparent"});
+       $('.header .cta').css({"visibility":"hidden"});
     }
+});
+
+$('a#play-video.video-play-button').click(function() {
+  $('html, body').animate({ scrollTop: $('.live-video').offset().top}, 'slow');
+});
+
+$('button#early-access.cta').click(function() {
+  $('html, body').animate({ scrollTop: $('.queue').offset().top}, 'slow');
 });
 </script>
 <!--<script src="assets/js/free-scroll.js"></script>-->
