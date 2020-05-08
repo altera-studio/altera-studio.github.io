@@ -1987,7 +1987,7 @@ body {
 
 .work-request--information input[type="text"],
 .work-request--information input[type="email"] {
-	width: 100%;
+	width: 124%;
 	padding: 0 0 5px 0;
 	background-color: transparent;
 	border: none;
