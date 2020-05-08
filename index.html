@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Altera - Free Interactive Learning With Twitch</title>
+  <title>Altera - Free Valorant Strategy Tool</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Altera gets realtime kills, builds, strategies and more from your favorite clips and replays. Sign up to join our queue and receive a prize.">
-  <meta name="keywords" content="Altera, videos, replays, League of Legends, lol, clips, data, machine learning, computer vision">
-  <meta name="author" content="Bucky Maler">
+  <meta name="description" content="Join 100+ people that want a free tool to create sharp plays on Valorant.">
+  <meta name="keywords" content="Altera, tool, VALORANT, Valorant, strategy, free, plays, overlay, board, abilities">
+  <meta name="author" content="Altera">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="shortcut icon" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/favicon.png" />
@@ -118,8 +118,8 @@
                   </iframe>-->
                 </div>
                 <div class="video-overlay"></div>
-                <video autoplay muted loop>
-                  <source src="https://clips-media-assets2.twitch.tv/AT-cm%7C663258584.mp4" type="video/mp4">
+                <video id="video" autoplay muted loop>
+                  <source src="https://blitz-cdn-videos.blitz.gg/valorant/map-tips/bind/cypher/cypher-bind-def-ashort-1way.mp4" type="video/mp4">
                 </video>
                 <div id="play-video" class="altera-tip">
                   ?<!--<i class="fas fa-play"></i>-->
@@ -184,9 +184,10 @@
                 <a href="#0">
                   <h3>Sova</h3>
                 </a>
-                <a href="#0">
-                  <h3>More...</h3>
+                <a href="#0" style="margin-right: 50px;">
+                  <h3>Sage</h3>
                 </a>
+                <h3 style="padding-right: 35px; padding-top: 15px;">And More!</h3>
               </div>
             </div>
           </li>
@@ -215,36 +216,6 @@
   </div>
   </ul>
 </div>
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
 <script src="https://kit.fontawesome.com/1cc2607717.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
@@ -267,12 +238,17 @@ var x = setInterval(function() {
     }
   }, true);
 }()); 
-
-document.getElementById('video').addEventListener('loadedmetadata', function() {
-  this.currentTime = 0;
-  this.playbackRate = 16;
-}, false);
 */
+/*document.getElementById('video').addEventListener('loadedmetadata', function() {
+  this.currentTime = 0;
+}, false);*/
+var video = document.getElementById('video');
+video.addEventListener("timeupdate", function(){
+    if(this.currentTime >= 1.4) {
+        this.currentTime = 0;
+        this.play();
+    }
+});
 </script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script type="text/javascript">
