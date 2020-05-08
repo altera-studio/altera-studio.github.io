@@ -863,10 +863,10 @@ body {
 
 .intro--banner video {
 	position: absolute;
-	width: 600px;
+	width: 580px;
 	height: 340px;
 	top: 65px;
-	right: -75px;
+	right: -40px;
 }
 
 .altera-tip {
@@ -1806,7 +1806,7 @@ body {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	margin: 0 auto
+	margin: -100px auto;
 }
 
 @media (max-width: 1180px) {
