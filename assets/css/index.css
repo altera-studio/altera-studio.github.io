@@ -415,7 +415,7 @@ body {
 
 @media screen and (max-width: 600px) {
   /* hide elements mobile */
-  #video, .about--banner, i.fab.fa-github {
+  #video, .about--banner, #status {
   	display: none;
   }
   #status {
@@ -1034,6 +1034,7 @@ body {
 	background-color: transparent;
 	border: none;
 	margin-top: 10px;
+	height: 40px;
 }
 
 .intro--banner button .btn-background {
