@@ -415,7 +415,7 @@ body {
 
 @media screen and (max-width: 600px) {
   /* hide elements mobile */
-  #video, .about--banner, #status {
+  #video, .about--banner, #status, .video--header {
   	display: none;
   }
   #status {
