@@ -508,6 +508,7 @@ body {
 .header .cta {
 	visibility: hidden;
 	background-color: var(--main-color);
+	background-color: #5f0dfa;
 	border: 0;
 	padding: 8px 14px;
 	margin-right: 50px;
@@ -524,9 +525,8 @@ body {
 
 .header i {
 	font-size: 22px;
-    /* position: absolute;
-    right: 10px;
-    top: 25px; */
+    vertical-align: bottom;
+    margin-right: 10px;
     cursor: pointer;
 }
 
@@ -645,6 +645,7 @@ body {
 	font-weight: 700;
 	text-transform: uppercase;
 	background-color: var(--main-color);
+	background-color: #5f0dfa; /* default supported fallback style */
 	border: none;
 	opacity: 0;
 	visibility: hidden;
@@ -738,6 +739,7 @@ body {
 
 .side-nav li.is-active {
 	color: var(--main-color);
+	color: #5f0dfa;
 	-webkit-transition: color .4s ease-in-out;
 	transition: color .4s ease-in-out
 }
@@ -987,6 +989,7 @@ body {
 	width: 30px;
 	height: 4px;
 	background-color: var(--main-color);
+	background-color: #5f0dfa;
 }
 
 .intro--banner h1 {
@@ -1029,6 +1032,7 @@ body {
 	right: 0;
 	height: 100%;
 	background-color: var(--main-color);
+	background-color: #5f0dfa;
 	z-index: -1;
 	-webkit-transition: left .2s ease-in-out;
 	transition: left .2s ease-in-out
@@ -1486,7 +1490,7 @@ body {
     right: 300px;
 	-webkit-transform: rotate(-25deg);
 	transform: rotate(-25deg);
-	border: 5px solid var(--main-color);
+	border: 5px solid #5f0dfa;
 	border-right-color: transparent;
 	border-bottom-color: transparent
 }
@@ -1500,7 +1504,7 @@ body {
 	transform: rotate(45deg);
 	width: 10px;
 	height: 10px;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 } 
 
 .about--banner h2 {
@@ -1519,7 +1523,7 @@ body {
 	left: 228px;
 	width: 30px;
 	height: 30px;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 	border-radius: 50%
 }
 
@@ -1530,7 +1534,7 @@ body {
 	left: 255px;
 	width: 10px;
 	height: 10px;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 }
 
 .about--banner a {
@@ -1582,7 +1586,7 @@ body {
 	height: 75px;
 	text-decoration: none;
 	color: #fff;
-	border: 10px solid var(--main-color);
+	border: 10px solid #5f0dfa;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat
@@ -1787,7 +1791,7 @@ body {
 
 .contact--lockup .modal--options li:nth-child(3) {
 	margin-bottom: 0;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 	text-transform: uppercase
 }
 
@@ -1880,7 +1884,7 @@ body {
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 	border: none;
 	border-radius: 0
 }
@@ -1961,8 +1965,8 @@ body {
 }
 
 .work-request--options input[type="checkbox"]:checked+label {
-	background-color: var(--main-color);
-	border-color: var(--main-color);
+	background-color: #5f0dfa;
+	border-color: #5f0dfa;
 }
 
 .work-request--options input[type="checkbox"]:checked+label svg {
@@ -2117,7 +2121,7 @@ body {
 .effect-rotate-left--animate .container {
 	-webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
 	transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
-	outline: 30px solid var(--main-color);
+	outline: 30px solid #5f0dfa;
 }
 
 .outer-nav {
@@ -2191,7 +2195,7 @@ body {
 	width: 110%;
 	height: 15px;
 	opacity: 0;
-	background-color: var(--main-color);
+	background-color: #5f0dfa;
 }
 
 .outer-nav>li.is-active::before {

@@ -84,7 +84,7 @@
       </svg>--></span>
     </a>
     <button class="header--cta cta" id="join-queue-header">Join The Queue</button>
-    <i class="fab fa-github"></i>
+    <div id="status"><i class="fas fa-square" style="color: #f2af00"></i><span>UNRELEASED</span></div>
     <button class="cta" id="early-access">Early Access<span class="btn-background"></span></button>
     <!--<i class="fab fa-twitch"></i>
     <i class="fab fa-mixer"></i>-->
@@ -92,6 +92,7 @@
       <span></span>
     </div>-->
   </header>
+  <div><i class="fab fa-github" style="position: absolute; right: 60px; top: 28px; font-size: 22px"></i></div>
   <div class="container"><div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
       <div class="l-wrapper">
@@ -173,7 +174,7 @@
           <li class="l-section section queue">
             <div class="over-capacity" style="display:none;">Sorry! Due to high demand, our waitlist is closed. We're working to have it up again today.</div>
             <div class="hire">
-              <h2>Aloha 👋</h2>
+              <h2>Get the tool</h2>
               <h4>We're so close to release! <br>Enter your email below to know when it's ready.</h4><br>
               <form action="https://send.pageclip.co/ADeuB60OO8bkEhxoSc6QyL4V697viJJp" class="work-request" method="post">
                 <div class="work-request--information">
@@ -195,7 +196,7 @@
   </div>
   </ul>
 </div>
-<script src="https://kit.fontawesome.com/1cc2607717.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/1cc2607717.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
 /* Prevent video fast-forwarding but allow back-tracking 
@@ -238,11 +239,13 @@ video.addEventListener("timeupdate", function(){
 $(document).scroll(function() {
     if($(this).scrollTop() > 25)
     {   
-       $('.header').css({"background-color":"#121212"});
-       $('.header .cta').css({"visibility":"visible"});
+      $('.header').css({"background-color":"#121212"});
+      $('.header .cta').css({"visibility":"visible"});
+      $('.header #status').css({"visibility":"hidden"});
     } else {
-       $('.header').css({"background-color":"transparent"});
-       $('.header .cta').css({"visibility":"hidden"});
+      $('.header').css({"background-color":"transparent"});
+      $('.header .cta').css({"visibility":"hidden"});
+      $('.header #status').css({"visibility":"visible"});
     }
 });
 
