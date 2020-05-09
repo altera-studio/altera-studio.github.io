@@ -92,7 +92,7 @@
       <span></span>
     </div>-->
   </header>
-  <div><a style="cursor: pointer; color: #ffffff; text-decoration: none" href="https://github.com/altera-project/Valorant-Strategy-Tool"><i class="fab fa-github" style="position: absolute; right: 60px; top: 28px; font-size: 22px"></i></a></div>
+  <a style="position: absolute; right: 60px; top: 28px; font-size: 22px; z-index:99; cursor: pointer; color: #ffffff; text-decoration: none" href="https://github.com/altera-project/Valorant-Strategy-Tool"><i class="fab fa-github"></i></a>
   <div class="container"><div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
       <div class="l-wrapper">
@@ -176,7 +176,7 @@
             <div class="hire">
               <h2>Get the tool</h2>
               <h4>We're so close to release! <br>Enter your email below to know when it's ready.</h4><br>
-              <form action="https://send.pageclip.co/ADeuB60OO8bkEhxoSc6QyL4V697viJJp" class="work-request" method="post">
+              <form id="early-signup" action="https://send.pageclip.co/ADeuB60OO8bkEhxoSc6QyL4V697viJJp" class="work-request" method="post">
                 <div class="work-request--information">
                   <div class="information-email">
                     <input id="email" type="email" name="email" spellcheck="false" required>
@@ -196,8 +196,16 @@
   </div>
   </ul>
 </div>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="https://kit.fontawesome.com/1cc2607717.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+$("#early-signup").submit(function(event) {
+    event.preventDefault();
+
+    alert("Email received! We'll let you know when the tool is ready.");
+});
+</script>
 <script type="text/javascript">
 /* Prevent video fast-forwarding but allow back-tracking 
 (function () {
@@ -234,7 +242,6 @@ video.addEventListener("timeupdate", function(){
     this.playbackRate = 2.5;
 });
 </script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script type="text/javascript">
 $(document).scroll(function() {
     if($(this).scrollTop() > 25)
