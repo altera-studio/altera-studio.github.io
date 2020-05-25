@@ -38,7 +38,7 @@
 
       <div class="desktopURL">
           <p>Share:</p>
-            <input id="code-search" type="" name="" placeholder="altera.studio/beta/" readonly="readonly" />
+            <input id="code-search" type="" name="" placeholder="altera.studio/beta?" readonly="readonly" />
             <i id="copy-url" class="far fa-copy"></i>
       </div>
     </header>
@@ -116,17 +116,21 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.2/URI.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/g/filesaver.js" type="text/javascript"></script>
+    <script src="js/filesaver.js" type="text/javascript"></script>
     <!-- js -->
-    <script src="js/anonymous-auth.js" type="text/javascript"></script> 
     <script src="js/id-generators.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/anonymous-auth.js" type="text/javascript"></script> 
 
     <script>
-        $('#code-search').val('altera.studio/beta/' + uniqueID +'/');
+        $('#code-search').val('altera.studio/beta/?' + uniqueID);
         
         $('#copy-url').click(function() {
-            alert('copied!');
+          var copyText = document.getElementById('code-search');
+          copyText.select();
+          copyText.setSelectionRange(0, 99999)
+          document.execCommand('copy');
+          alert('Copied the text: ' + copyText.value);
         });
     </script>
   </body>
