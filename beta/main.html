@@ -88,12 +88,19 @@
       </div>
     </div>
 
+    <!-- analytics -->
+    <script>window.sa_event=window.sa_event||function(){a=[].slice.call(arguments);sa_event.q?sa_event.q.push(a):sa_event.q=[a]};</script>
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+
     <!-- js -->
     <script src="js/id-generators.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 
     <script type="text/javascript">
       $('#join').click(function() {
+        sa_event('join');
+
         var code = $('#code-search').val();
         
         if(!code || code == ' ') 
@@ -101,7 +108,9 @@
       });
 
       $('#create').click(function() {
-          window.location.href = 'index.html';
+        sa_event('create');
+
+        window.location.href = 'index.html';
       });
     </script>
   </body>
