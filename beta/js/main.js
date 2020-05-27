@@ -30,7 +30,7 @@
 
     var room = database.ref('rooms/').child(uniqueID);
 
-    var width = 640;
+    var width = 680;
     var height = 700;
     var painting = true;
 
@@ -48,16 +48,16 @@
 
     var assetsPath = 'assets/maps/';
     // map images
-    var havenMap = assetsPath + 'haven-map.png';
-    var splitMap = assetsPath + 'split-map.png';
-    var bindMap = assetsPath + 'bind-map.png';
+    var havenMap = assetsPath + 'haven-layout-base.svg';
+    var splitMap = assetsPath + 'split-layout-base2.svg';
+    var bindMap = assetsPath + 'bind-layout-base.svg';
     // labels 
-    var havenAttackLabels = assetsPath + 'haven-labels-offense.png';
-    var havenDefenseLabels = assetsPath + 'haven-labels-defense.png';
-    var splitAttackLabels = assetsPath + 'split-labels-offense.png';
-    var splitDefenseLabels = assetsPath + 'split-labels-defense.png';
-    var bindAttackLabels = assetsPath + 'bind-labels-offense.png';
-    var bindDefenseLabels = assetsPath + 'bind-labels-defense.png';
+    var havenAttackLabels = assetsPath + 'haven-labels-offense.svg';
+    var havenDefenseLabels = assetsPath + 'haven-labels-defense.svg';
+    var splitAttackLabels = assetsPath + 'split-labels-offense2.svg';
+    var splitDefenseLabels = assetsPath + 'split-labels-defense2.svg';
+    var bindAttackLabels = assetsPath + 'bind-labels-offense.svg';
+    var bindDefenseLabels = assetsPath + 'bind-labels-defense.svg';
 
     // defaults
     mapView = havenMap;
@@ -76,8 +76,8 @@
 
     Konva.Image.fromURL(mapLabels, function(labels) {
       labels.setAttrs({
-        x: 8,
-        y: 34,
+        x: 0,
+        y: 0,
         scaleX: 1,
         scaleY: 1,
       });
