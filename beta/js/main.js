@@ -239,6 +239,11 @@
         console.log('User is signed in.');
         console.log('uid', uid, ', isAnonymous', isAnonymous);
 
+        $(document).find('#reporting').click(function() {
+          window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjwweJKXywplMXMsQcLbHvSEAY6ki-uZZBZzt0QqxxvhxC9Q/viewform?usp=pp_url&entry.1624229457=' 
+          + uid);
+        });
+
         function clearAll()
         {
           objLayer.destroyChildren();
