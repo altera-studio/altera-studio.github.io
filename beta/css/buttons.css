@@ -12,10 +12,6 @@
   transition: background-color 150ms ease;
 }
 
-.button-style svg {
-  margin-right: 10px;
-}
-
 .button-style:hover {
   background-color: #FF0055;
 }

@@ -30,7 +30,7 @@
 
     var room = database.ref('rooms/').child(uniqueID);
 
-    var width = 680;
+    var width = 700;
     var height = 700;
     var painting = true;
 
@@ -84,6 +84,21 @@
       bgLayer.add(labels);
       bgLayer.batchDraw();
     });
+
+    /* Text example with offsets 
+    var simpleText = new Konva.Text({
+      x: stage.width(),
+      y: stage.height(),
+      text: 'Text Example',
+      fontSize: 16,
+      fontFamily: 'Calibri',
+      fill: 'green',
+    });
+
+    simpleText.offsetX(simpleText.width());
+    simpleText.offsetY(simpleText.height());
+    bgLayer.add(simpleText);
+    */
 
     // get url of dragged icon
     var itemURL = '';
@@ -216,15 +231,87 @@
     });
 
     auth.onAuthStateChanged(function(user) {
-      if (user) {
-        console.log('User is signed in.');
-        // User is signed in.
+      if (user) 
+      {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
        
+        console.log('User is signed in.');
         console.log('uid', uid, ', isAnonymous', isAnonymous);
+
+        function clearAll()
+        {
+          objLayer.destroyChildren();
+          bgLayer.destroyChildren();
+          room.child('icons').remove();
+          room.child('arrows').remove();
+        }
+
+        function setMapAndLabels(newView, newLabels)
+        {
+          Konva.Image.fromURL(newView, function(map) {
+            map.setAttrs({
+              x: 0,
+              y: 0,
+              scaleX: 1,
+              scaleY: 1,
+            });
+            bgLayer.add(map);
+            bgLayer.batchDraw();
+          });
+
+          Konva.Image.fromURL(newLabels, function(labels) {
+            labels.setAttrs({
+              x: 0,
+              y: 0,
+              scaleX: 1,
+              scaleY: 1,
+            });
+            bgLayer.add(labels);
+            bgLayer.batchDraw();
+          });
+        }
       
         // BUTTONS
+        $(document).find('#haven-button').click(function() 
+        { 
+          $('#bind-button').removeClass('active');
+          $('#split-button').removeClass('active');
+          $(this).addClass('active');
+
+          clearAll();
+
+          mapView = havenMap;
+          mapLabels = havenAttackLabels;
+          setMapAndLabels(mapView, mapLabels);
+        });
+
+        $(document).find('#bind-button').click(function() 
+        { 
+          $('#haven-button').removeClass('active');
+          $('#split-button').removeClass('active');
+          $(this).addClass('active');
+
+          clearAll();
+
+          mapView = bindMap;
+          mapLabels = bindAttackLabels;
+          setMapAndLabels(mapView, mapLabels);
+        });
+
+        $(document).find('#split-button').click(function() 
+        { 
+          $('#bind-button').removeClass('active');
+          $('#haven-button').removeClass('active');
+          $(this).addClass('active');
+
+          clearAll();
+
+          mapView = splitMap;
+          mapLabels = splitAttackLabels;
+          setMapAndLabels(mapView, mapLabels);
+        });
+
         $(document).find('#reset').click(function() 
         { 
           objLayer.clear();
@@ -234,10 +321,7 @@
 
         $(document).find('#flip').click(function() 
         {
-          objLayer.clear();
-          bgLayer.clear();
-          room.child('icons').remove();
-          room.child('arrows').remove();
+          clearAll();
 
           // flip labels
           switch(mapLabels) {
@@ -249,27 +333,7 @@
             case bindDefenseLabels: mapLabels = bindDefenseLabels; break;
           }
 
-          Konva.Image.fromURL(mapView, function(map) {
-            map.setAttrs({
-              x: 0,
-              y: 0,
-              scaleX: 1,
-              scaleY: 1,
-            });
-            bgLayer.add(map);
-            bgLayer.batchDraw();
-          });
-
-          Konva.Image.fromURL(mapLabels, function(labels) {
-            labels.setAttrs({
-              x: 8,
-              y: 34,
-              scaleX: 1,
-              scaleY: 1,
-            });
-            bgLayer.add(labels);
-            bgLayer.batchDraw();
-          });
+          setMapAndLabels(mapView, mapLabels);
         });
 
         $(document).find('#save').click(function() 
@@ -282,21 +346,16 @@
           ctx.drawImage(objCanvas, 0, 0);
           var img = bgCanvas.toDataURL('image/png');
 
-          // save to local drive
-          img.toBlob(function(blob) {
-              saveAs(blob, "pretty image.png");
-          });
-
           // save to cloud implementation 
-          /*
-          alert('Your strategy has been saved!');
-          
           // generate a unique identifier to name the image     
           var uuidv4 = generateUUIDV4();
 
           // save image under current user's folder by their user id 
-          storage.ref('images/' + uid + '/' + uuidv4).putString(img, 'data_url'); 
-          */    
+          storage.ref('images/' + uid + '/' + uuidv4).putString(img, 'data_url').then(function(snapshot) {
+            snapshot.ref.getDownloadURL().then(function(downloadURL) {
+              window.open(downloadURL);
+            });
+          });        
         });
 
         $(document).find('#view').click(function() 

@@ -152,6 +152,10 @@ button {
   flex: 1 1 15%;
 }
 
+.desktopBottom > #middle .active {
+  opacity: .6;
+}
+
 .desktopBottom > #right > h1 {
   font-family: "Roboto Mono";
   font-style: normal;
@@ -293,6 +297,19 @@ button {
   cursor: pointer;
 }
 
+#report-bug {
+  position: absolute;
+  right: 120px;
+  bottom: 120px;
+}
+
+#report-bug a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 #bug {
   cursor: pointer;
+  vertical-align: middle;
 }
